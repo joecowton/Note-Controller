@@ -12,11 +12,10 @@
   ViewList.prototype.printlist = function(){
     var final_list = this.viewlist.list.map(function(note){
     return note.text}).join(",")
-    return this.stringtoHTML(final_list);
-    console.log(final_list);
+    var x = this.stringtoHTML(final_list);
+    return x;
   };
 
+  exports.ViewList = ViewList;
 
-
-exports.ViewList = ViewList;
 })(this);
