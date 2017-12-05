@@ -1,4 +1,5 @@
-var Note = require("./noteModel.js").note;
+// var Note = require("../src/note-model.js").note;
+(function(exports){
   var assert = {
     isTrue: function(describe, assertionToCheck){
       if (!assertionToCheck){
@@ -23,3 +24,4 @@ var Note = require("./noteModel.js").note;
 
 testStoreNote();
 testNoteTextProperty();
+})(this); 
