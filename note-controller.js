@@ -1,29 +1,19 @@
 (function(exports){
 
-function NoteController (noteListModel = new NoteList) {
-  this.noteListModel = noteListModel
+function NoteController (noteList = NoteList) {
+  this.noteList = new NoteList();
+  this.viewList = new ViewList();
 }
 
-  NoteController.prototype.changeHTML = function(){
-    var viewlist = new ViewList();
-    var viewlist2 = viewlist.printlist();
-
-    window.onload = function(){
-      var index = document.getElementById('app');
-      index.innerHTML = viewlist2
-    };
-  }
-
   NoteController.prototype.addNote = function(note){
-    return this.noteListModel.list.push(note)
+     this.noteList.saveList(note)
   }
 
-  NoteController.prototype.noteListView = function(viewList = new ViewList) {
-    var viewlist = viewList(this.noteListModel);
-    return viewlist.printlist();
+  NoteController.prototype.noteListView = function(noteList) {
+    var index = document.getElementById('app');
+    index.innerHTML = viewlist.printlist(noteList);
   }
 
-  exports.NoteController = NoteController
-
+  exports.NoteController = NoteController;
 
 })(this);

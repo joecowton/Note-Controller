@@ -20,7 +20,7 @@
     }
   }
 
-  var noteList = new NoteListDouble();
+  var noteList = new NoteList();
 
   function ViewListDouble(){
     this.list = ['hi']
@@ -32,8 +32,9 @@
     }
   }
 
-  var viewList = new ViewListDouble();
-  var noteController = new NoteController(noteList);
+  var viewList = new ViewList(noteList);
+
+  var noteController = new NoteController(viewList);
 
   function testsInstance(){
     if(typeof noteController !== 'object'){
@@ -60,7 +61,7 @@
 
   function addTextToWIndow(){
     noteController.changeHTML()
-    if(noteController.v.text !== "<ul><li><div>hello</div></li></ul>" ){
+    if(noteController.viewList[0].text !== "<ul><li><div>hello</div></li></ul>" ){
       throw new Error ("so done with this")
     } else {
       console.log("time for home")
