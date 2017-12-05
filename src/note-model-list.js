@@ -1,11 +1,14 @@
-function NoteList(){
+(function(exports){
+
+  function NoteList(){
   this.list = []
-}
+};
 
 NoteList.prototype = {
   saveList: function(note){
-    this.list.push(note)
-    return this.list
+    return this.list.push(note);
   }
+};
 
-}
+exports.NoteList = NoteList;
+})(this);
