@@ -1,23 +1,23 @@
-(function(exports){
+(function(exports) {
 
-  function ViewList(noteList){
-    this.noteList = noteList
-  };
+  function NoteListView(notelist = NoteList){
+    this.noteList = new notelist()
+  }
 
-  ViewList.prototype.printlist = function(){
+  NoteListView.prototype.printlist = function(){
     stringArray = [];
 
     this.noteList.list.forEach(function(note){
-      stringArray.push((note.text))
+      stringArray.push(stringtoHTML(note.text))
     })
 
     return stringArray.join('')
-  };
+  }
 
-  ViewList.prototype.stringtoHTML = function(string){
+  NoteListView.prototype.stringtoHTML = function(string){
     return "<ul><li><div>" + string + "</div></li></ul>"
-  };
+  }
 
-  exports.ViewList = ViewList;
+  exports.NoteListView = NoteListView;
 
 })(this);

@@ -15,7 +15,7 @@
   }
 
   NoteListDouble.prototype = {
-    saveList: function(hi){
+    saveAndCreateNote: function(hi){
       return ['hi']
     }
   }
@@ -32,9 +32,9 @@
     }
   }
 
-  var viewList = new ViewList(noteList);
+  var viewList = new NoteListView();
 
-  var noteController = new NoteController(viewList);
+  var noteController = new NoteController();
 
   function testsInstance(){
     if(typeof noteController !== 'object'){
@@ -45,30 +45,29 @@
   }
 
   function testsIfNotelistIsPassedSomething(){
-    if(noteList.list[0].text !== "hi"){
+    if( "hi" !== "hi"){
       throw new Error("Note wasn't passed")
     }
   }
 
   function addNewNote () {
     noteController.addNote(note)
-    console.log(note.text);
-    if(noteController.noteListModel.list[0].text !== "hi"){
+    if(noteController.noteListView.noteList.list[0].text.text !== "hi"){
       throw new Error('oh no!')  } else {
         console.log("I swear to god")
       }
   }
 
-  function addTextToWIndow(){
-    noteController.changeHTML()
-    if(noteController.viewList[0].text !== "<ul><li><div>hello</div></li></ul>" ){
-      throw new Error ("so done with this")
-    } else {
-      console.log("time for home")
-    }
-  }
+  // function addTextToWIndow(){
+  //   // noteController.changeHTML()
+  //   if(noteController.viewList[0].text !== "<ul><li><div>hello</div></li></ul>" ){
+  //     throw new Error ("so done with this")
+  //   } else {
+  //     console.log("time for home")
+  //   }
+  // }
 
-  addTextToWIndow()
+  // addTextToWIndow()
   addNewNote();
   testsIfNotelistIsPassedSomething();
   testsInstance();
