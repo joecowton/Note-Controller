@@ -1,0 +1,22 @@
+{
+  "name": "javascript-module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joecowton/javascript-module.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joecowton/javascript-module/issues"
+  },
+  "homepage": "https://github.com/joecowton/javascript-module#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}
