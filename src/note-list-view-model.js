@@ -14,7 +14,7 @@
     return stringArray.join('')
   }
 
-  NoteListView.prototype.stringtoHTML = function(string){
+  function stringtoHTML (string){
     return "<ul><li><div>" + string + "</div></li></ul>"
   }
 

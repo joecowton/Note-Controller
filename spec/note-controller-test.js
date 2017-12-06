@@ -54,7 +54,7 @@
     noteController.addNote(note)
     if(noteController.noteListView.noteList.list[0].text.text !== "hi"){
       throw new Error('oh no!')  } else {
-        console.log("I swear to god")
+        console.log("note added")
       }
   }
 

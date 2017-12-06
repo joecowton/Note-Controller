@@ -1,12 +1,11 @@
 (function(exports){
 
-  function NoteController (notelist = NoteList, notelistview = NoteListView) {
-    this.noteList = new notelist();
-    this.noteListView = new notelistview(notelist);
+  function NoteController (notelistview = NoteListView) {
+    this.noteListView = new notelistview();
   }
 
   NoteController.prototype.addNote = function(note){
-     this.noteListView.noteList.saveAndCreateNote(note)
+    this.noteListView.noteList.saveAndCreateNote(note)
   }
 
   NoteController.prototype.switchHTML = function() {
