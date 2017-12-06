@@ -5,17 +5,10 @@
   }
 
   NoteListView.prototype.printlist = function(){
-    stringArray = [];
-
-    this.noteList.list.forEach(function(note){
-      stringArray.push(stringtoHTML(note.text))
+    noteArray = this.noteList.list.map(function(note){
+      return `<li><div><a href="#${note.id}">${note.text.slice(0, 20)}</a></div></li>`
     })
-
-    return stringArray.join('')
-  }
-
-  function stringtoHTML (string){
-    return "<ul><li><div>" + string + "</div></li></ul>"
+    return noteArray.join('')
   }
 
   exports.NoteListView = NoteListView;

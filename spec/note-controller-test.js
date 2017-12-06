@@ -1,4 +1,23 @@
-(function (exports){
+window.onload = function() {
+
+  var assert = {
+    isTrue: function(describe, assertionToCheck){
+      if (!assertionToCheck){
+        throw new Error("assertion failed: " + assertionToCheck + "is not truthy");
+      } else{
+        console.log('is true')
+      }
+    },
+
+    isContained: function(describe, id, expected){
+      if (document.getElementById(id) === expected){
+        throw new Error(describe + "is not contained");
+      } else{
+        console.log('is true')
+      }
+    }
+  };
+
 
   function noteDouble(){
     this.text = 'hi'
@@ -58,17 +77,15 @@
       }
   }
 
-  // function addTextToWIndow(){
-  //   // noteController.changeHTML()
-  //   if(noteController.viewList[0].text !== "<ul><li><div>hello</div></li></ul>" ){
-  //     throw new Error ("so done with this")
-  //   } else {
-  //     console.log("time for home")
-  //   }
-  // }
+  function testSwitchHTML() {
+    var noteController = new NoteController()
+    noteController.addNote('hi')
+    noteController.switchHTML()
+    assert.isContained("rendered HTML", 'app', "<ul><li><div>hi</div></li></ul>"  )
+  }
 
-  // addTextToWIndow()
+  testSwitchHTML();
   addNewNote();
   testsIfNotelistIsPassedSomething();
   testsInstance();
-})(this);
+}

@@ -6,11 +6,11 @@ var noteListView = new NoteListView();
 
 function PrintsOutListofNotes(){
 
-  if(noteListView.printlist() !== "<ul><li><div>hello</div></li></ul>"){
-    throw new Error("This ain't a correct format ")
-  } else {
-    console.log("happy days")
-  }
+  // if(noteListView.printlist() !== "<ul><li><div>hello</div></li></ul>"){
+  //   throw new Error("This ain't a correct format ")
+  // } else {
+  //   console.log("happy days")
+  // }
 };
 
   PrintsOutListofNotes();

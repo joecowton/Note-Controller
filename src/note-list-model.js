@@ -3,6 +3,7 @@
   function NoteList (note = Note) {
     this.list = []
     this.noteClass = note
+    this.noteCount = 0
   }
 
   NoteList.prototype.returnNotes = function(){
@@ -10,7 +11,8 @@
   }
 
   NoteList.prototype.saveAndCreateNote = function(text){
-    this.list.push(new this.noteClass(text))
+    this.noteCount++
+    this.list.push(new this.noteClass(text, this.noteCount))
   }
 
   exports.NoteList = NoteList;
