@@ -18,26 +18,23 @@
 
   NoteController.prototype.singleNotePost = function() {
 
+    var content = this.noteListView.noteList.returnNotes()
+
     function showNoteForCurrentPage() {
-      showNote(getNoteFromUrl(window.location));
-      console.log(1);
+      showNote((content[getNoteFromUrl(window.location)-1]).text());
     };
 
     function getNoteFromUrl(location) {
       return parseInt(location.hash.split("/")[1]);
-      console.log(2);
     };
 
     function showNote(note) {
-      console.log(this.noteListView.getList());
-      // console.log(3);
-
       document
         .getElementById("app")
-        .innerHTML = this.noteListView.noteList.returnNotes()[0];
+        .innerHTML = note;
     };
-
     window.addEventListener("hashchange", showNoteForCurrentPage)
+
   };
 
   exports.NoteController = NoteController;

@@ -32,6 +32,7 @@
 
 
   function testSwitchHTML () {
+    var noteController = new NoteController();
     noteController.addNote('hi')
     if(noteController.switchHTML() !== `<ul><li><div><a href="#notes/1">hi</a></div></li></ul>`){
       throw new Error('oh no!')  } else {
@@ -48,11 +49,8 @@
 
   function addNotes() {
 
-    var noteList = new NoteList();
-    noteList.saveAndCreateNote('new note');
-    noteList.saveAndCreateNote('new note2');
-    var noteListView = new NoteListView(noteList)
-    var noteController = new NoteController(noteListView);
+    noteController.addNote("note here")
+    noteController.addNote("note here 2")
     noteController.switchHTML();
     noteController.singleNotePost();
   }

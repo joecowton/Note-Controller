@@ -8,8 +8,6 @@
     return this.noteList;
   }
 
-
-
   NoteListView.prototype.printlist = function(){
     function minify(note){
       return note.text().slice(0, 20)
