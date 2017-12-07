@@ -18,10 +18,11 @@
 
   NoteController.prototype.listenForSubmit = function (){
       window.addEventListener('submit', function(submitEvent) {
-      submitEvent.preventDefault();
-      console.log(submitEvent);
-      console.log("submitted")
-    })
+        submitEvent.preventDefault();
+        var note = (submitEvent.srcElement.elements["0"].value);
+        console.log("submitted")
+      })
+    this.addNote(note);
   }
 
 
