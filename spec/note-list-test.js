@@ -5,7 +5,6 @@
 
   function array (){
     noteListModel.saveAndCreateNote("hi")
-    console.log("notelist"+ noteListModel.list)
     if(noteListModel.list[0].text() !== "hi" ) {
       throw new Error ("You're note is not in there")
     } else {

@@ -3,6 +3,7 @@
   function NoteController (notelistview = new  NoteListView, noteSingleView = new  NoteSingleView) {
     this.noteListView = notelistview;
     this.noteSingleView = noteSingleView;
+    // this.noteList = noteListView.noteList.returnNotes()
   }
 
   NoteController.prototype.addNote = function(note){
@@ -16,21 +17,27 @@
   }
 
   NoteController.prototype.singleNotePost = function() {
-    window.addEventListener("hashchange", showNoteForCurrentPage);
-  }
 
-  function showNoteForCurrentPage() {
-    showNote(getNoteFromUrl(window.location));
-  };
+    function showNoteForCurrentPage() {
+      showNote(getNoteFromUrl(window.location));
+      console.log(1);
+    };
 
-  function getNoteFromUrl(location) {
-    return location.hash.split("#")[0];
-  };
+    function getNoteFromUrl(location) {
+      return parseInt(location.hash.split("/")[1]);
+      console.log(2);
+    };
 
-  function showNote(note) {
-    document
-      .getElementById("app")
-      .innerHTML = note ;
+    function showNote(note) {
+      console.log(this.noteListView.getList());
+      // console.log(3);
+
+      document
+        .getElementById("app")
+        .innerHTML = this.noteListView.noteList.returnNotes()[0];
+    };
+
+    window.addEventListener("hashchange", showNoteForCurrentPage)
   };
 
   exports.NoteController = NoteController;
