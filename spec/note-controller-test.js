@@ -39,13 +39,7 @@
         console.log("note added as html")
       }
   }
-  // function DoubleNote () {this._text = "hello"; this.id = 1 }
-  // DoubleNote.prototype.text = function () { return this._text }
-  //
-  // function DoubleNoteList (notes) { this._list = [notes] }
-  // DoubleNoteList.prototype.returnNotes = function(){ return this._list }
-  //
-  // var noteListView = new NoteListView(new DoubleNoteList(new DoubleNote()));
+
 
   function addNotes() {
 
