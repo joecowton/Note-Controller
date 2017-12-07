@@ -16,6 +16,15 @@
     return this.noteListView.printlist();
   }
 
+  NoteController.prototype.listenForSubmit = function (){
+      window.addEventListener('submit', function(submitEvent) {
+      submitEvent.preventDefault();
+      console.log(submitEvent);
+      console.log("submitted")
+    })
+  }
+
+
   NoteController.prototype.singleNotePost = function() {
 
     var content = this.noteListView.noteList.returnNotes()

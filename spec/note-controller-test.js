@@ -47,6 +47,7 @@
     noteController.addNote("note here 2")
     noteController.switchHTML();
     noteController.singleNotePost();
+    noteController.listenForSubmit();
   }
 
 
