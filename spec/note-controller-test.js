@@ -20,7 +20,7 @@ window.onload = function() {
 
 
   function noteDouble(){
-    this.text = 'hi'
+    this._text = 'hi'
   };
 
   noteDouble.prototype = {
@@ -69,13 +69,13 @@ window.onload = function() {
     }
   }
 
-  function addNewNote () {
-    noteController.addNote(note)
-    if(noteController.noteListView.noteList.list[0].text.text !== "hi"){
-      throw new Error('oh no!')  } else {
-        console.log("note added")
-      }
-  }
+  // function addNewNote () {
+  //   noteController.addNote(note)
+  //   if(noteController.noteListView.noteList.list[0].text.text !== "hi"){
+  //     throw new Error('oh no!')  } else {
+  //       console.log("note added")
+  //     }
+  // }
 
   function testSwitchHTML() {
     var noteController = new NoteController()
@@ -85,7 +85,7 @@ window.onload = function() {
   }
 
   testSwitchHTML();
-  addNewNote();
+  // addNewNote();
   testsIfNotelistIsPassedSomething();
   testsInstance();
 }

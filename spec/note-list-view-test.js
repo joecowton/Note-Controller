@@ -1,17 +1,25 @@
-(function(exports) {
 
-var note = new Note("hello");
-var noteList = new NoteList();
-var noteListView = new NoteListView();
 
+function DoubleNote () {
+  this.text = ""
+  this.id = 1
+}
+
+function DoubleNoteList (notes) {
+  this._list = [notes]
+}
+DoubleNoteList.prototype.list = function(){
+  return this._list;
+}
+
+var noteListView = new NoteListView(new DoubleNoteList(new DoubleNote("", 1)));
+// var noteListView = new NoteListView();
 function PrintsOutListofNotes(){
-
-  // if(noteListView.printlist() !== "<ul><li><div>hello</div></li></ul>"){
-  //   throw new Error("This ain't a correct format ")
-  // } else {
-  //   console.log("happy days")
-  // }
+  console.log(noteListView.noteList.list())
+  if(noteListView.printlist() !== ''){
+    throw new Error("failed to return empty html list ")
+  } else {
+    console.log("empty html list passed")
+  }
 };
-
-  PrintsOutListofNotes();
-})(this);
+PrintsOutListofNotes();
