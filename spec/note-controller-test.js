@@ -77,15 +77,14 @@ window.onload = function() {
   //     }
   // }
 
-  function testSwitchHTML() {
-    var noteController = new NoteController()
-    noteController.addNote('hi')
-    noteController.switchHTML()
-    assert.isContained("rendered HTML", 'app', "<ul><li><div>hi</div></li></ul>"  )
-  }
+  // function testSwitchHTML() {
+  //   var noteController = new NoteController()
+  //   noteController.addNote('hi')
+  //   noteController.switchHTML()
+  //   assert.isContained("rendered HTML", 'app', "<ul><li><div>hi</div></li></ul>"  )
+  // }
 
-  testSwitchHTML();
-  // addNewNote();
+  // testSwitchHTML();
   testsIfNotelistIsPassedSomething();
   testsInstance();
 }

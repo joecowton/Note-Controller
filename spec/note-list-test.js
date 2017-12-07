@@ -1,6 +1,7 @@
 (function(exports){
-  var noteListModel = new NoteList();
 
+  var noteListModel = new NoteList();
+  var note = new Note("hi");
 
   function array (){
     noteListModel.saveAndCreateNote("hi")
