@@ -48,6 +48,7 @@
     noteController.switchHTML();
     noteController.singleNotePost();
     noteController.listenForSubmit();
+    noteController.loadContent();
 
   }
 
