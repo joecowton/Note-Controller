@@ -1,6 +1,3 @@
-
-
-
 function PrintsOutListofNotes(){
 
   function DoubleNote () {this._text = ""; this.id = 1 }
@@ -18,8 +15,8 @@ function PrintsOutListofNotes(){
     console.log("empty html list passed")
   }
 };
-PrintsOutListofNotes();
 
+PrintsOutListofNotes();
 
 function AddsTwoNotesToList(){
 
