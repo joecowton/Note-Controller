@@ -1,22 +1,19 @@
 (function(exports){
 
-
   function NoteController (notelistview = new  NoteListView, noteSingleView = new  NoteSingleView) {
-
     this.noteListView = notelistview;
     this.noteSingleView = noteSingleView;
-    // this.noteList = noteListView.noteList.returnNotes()
-  }
+  };
 
   NoteController.prototype.addNote = function(note){
-    this.noteListView.noteList.saveAndCreateNote(note)
-  }
+    this.noteListView.noteList.saveAndCreateNote(note);
+  };
 
   NoteController.prototype.switchHTML = function() {
     var index = document.getElementById('app');
     index.innerHTML = this.noteListView.printlist();
     return this.noteListView.printlist();
-  }
+  };
 
   NoteController.prototype.listenForSubmit = function (){
     var self = this
@@ -25,8 +22,8 @@
         self.addNote(submitEvent.srcElement.elements["0"].value);
         self.switchHTML();
         self.singleNotePost();
-      })
-  }
+      });
+  };
 
   NoteController.prototype.loadContent = function () {
     var self = this
@@ -38,9 +35,7 @@
     };
     xhttp.open("GET", "https://content.guardianapis.com/search?business&api-key=53f2b43f-aa5f-4910-8a62-d5a63d730359", true);
     xhttp.send()
-  }
-
-
+  };
 
   NoteController.prototype.singleNotePost = function() {
 
@@ -62,8 +57,6 @@
     window.addEventListener("hashchange", showNoteForCurrentPage)
 
   };
-
-
 
   exports.NoteController = NoteController;
 

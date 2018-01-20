@@ -1,8 +1,8 @@
 (function(exports){
 
   function Note(text='', id = 0){
-    this._text = text
-    this.id = id
+    this._text = text;
+    this.id = id;
   }
 
   Note.prototype.text = function(){
