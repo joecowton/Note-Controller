@@ -8,5 +8,5 @@ Basic note app written in Vanilla Javascript as an introduction to JS.
 ```
 clone repository
 cd note-controller
-open index.html
+open spec-runner.html
 ```
