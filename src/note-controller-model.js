@@ -12,6 +12,7 @@
   NoteController.prototype.switchHTML = function() {
     var index = document.getElementById('app');
     index.innerHTML = this.noteListView.printlist();
+    return this.noteListView.printlist();
   };
 
   NoteController.prototype.listenForSubmit = function (){
