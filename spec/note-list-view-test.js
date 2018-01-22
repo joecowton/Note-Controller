@@ -8,7 +8,6 @@ function PrintsOutListofNotes(){
 
   var noteListView = new NoteListView(new DoubleNoteList(new DoubleNote()));
 
-  console.log(noteListView.printlist())
   if(noteListView.printlist() !== `<ul><li><div><a href="#notes/1"></a></div></li></ul>`){
     throw new Error("failed to return empty html list ")
   } else {
